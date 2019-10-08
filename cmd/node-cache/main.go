@@ -130,16 +130,16 @@ func (c *cacheApp) setupNetworking() error {
 	if err != nil {
 		return err
 	}
-	if c.setupIptables {
-		for _, rule := range c.iptablesRules {
-			_, err = c.iptables.EnsureRule(utiliptables.Prepend, rule.table, rule.chain, rule.args...)
-			if err != nil {
-				return err
-			}
-		}
-	} else {
-		clog.Infof("Skipping iptables setup for node cache")
-	}
+	//if c.setupIptables {
+	//	for _, rule := range c.iptablesRules {
+	//		_, err = c.iptables.EnsureRule(utiliptables.Prepend, rule.table, rule.chain, rule.args...)
+	//		if err != nil {
+	//			return err
+	//		}
+	//	}
+	//} else {
+	//	clog.Infof("Skipping iptables setup for node cache")
+	//}
 	return err
 }
 

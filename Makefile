@@ -20,23 +20,16 @@
 PKG := k8s.io/dns
 
 # List of binaries to build.
-BINARIES := \
-    e2e \
-    ginkgo \
-    sidecar-e2e
+BINARIES :=
 
 # List of binaries to build that are containerized and pushed.
 # You must have a matching Dockerfile.BINARY for each BINARY.
-CONTAINER_BINARIES := \
-    dnsmasq-nanny \
-    kube-dns \
-    node-cache \
-    sidecar
+CONTAINER_BINARIES := node-cache
 
 # List of images to build (contained in images/)
 IMAGES := dnsmasq
 # Registry to push to.
-REGISTRY ?= staging-k8s.gcr.io
+REGISTRY ?= docker.io/axot
 # Default architecture to build for.
 ARCH ?= amd64
 # Image to use for building.
